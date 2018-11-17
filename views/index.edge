@@ -1,0 +1,154 @@
+@layout('layout/layout')
+
+@yield('content')
+       @set('title', 'Home page')
+     
+          <div class="wrapper" id="top-wrapper">
+            <div class="container">
+            <div class="columns">
+              
+        
+              <main class="column main">
+            
+                <div class="level">
+                  <div class="level-left">
+                    
+                  </div>
+                  <div class="level-left">
+                      <div class="level-item">
+                        @if(message)
+                        <p class="help is-success" id="success">{{message}}</p>
+                        @else
+                          <p></p>
+                        @endif
+                      
+                      </div>
+                    </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                      <button type="button" class="button is-small">
+                        {{date.toDateString()}}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="columns is-multiline">
+                  <div class="column">
+                    <div class="box notification is-primary">
+                      <div class="heading  has-text-centered">Total Users</div>
+                      <div class="title  has-text-centered">{{totalUser}}</div>
+                      <div class="level">
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">Total Males</div>
+                            <div class="title is-5">{{maleTotal}}</div>
+                          </div>
+                        </div>
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">Total Females</div>
+                            <div class="title is-5">{{femaleTotal}}</div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="box notification is-warning">
+                      <div class="heading  has-text-centered">Total Likes</div>
+                      <div class="title has-text-centered">{{countTotalLikes}}</div>
+                      <div class="level">
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">Last Month</div>
+                            <div class="title is-5">30</div>
+                          </div>
+                        </div>
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">This Month</div>
+                            <div class="title is-5">25</div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="column">
+                    <div class="box notification is-danger">
+                      <div class="heading  has-text-centered">total Unlikes</div>
+                    <div class="title  has-text-centered">{{countTotalUnLikes}}</div>
+                      <div class="level">
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">this month</div>
+                            <div class="title is-5">425K</div>
+                          </div>
+                        </div>
+                        <div class="level-item">
+                          <div class="">
+                            <div class="heading">last mont</div>
+                            <div class="title is-5">106K</div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+               
+              </main>
+            </div>
+          
+         </div> 
+          </div>
+          <div class="container">
+             
+          <div class="table__wrapper">
+                <table class="table is-bordered table is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Likes</th>
+                        <th>Unlikes</th>
+                        {{--  <th>Action</th>  --}}
+                        
+                    </tr>
+                </thead>
+                    <tbody>
+                 @each(user in users)
+                    <tr>
+                        
+                          
+                       
+                      <td>{{user.name}}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.phone}}</td>
+                      <td>{{user.gender}}</td>
+                      <td>{{user.likes}}</td>
+                      <td>{{user.unlikes}}</td>
+                      <td class="action">
+                            <div class="buttons">
+                            <a class="button is-primary" href="/users/{{user._id}}/edit">
+                                <strong>Edit</strong>
+                              </a>
+                              <a class="button is-danger" id="danger" href="/users/{{user._id}}/delete">
+                                  <strong>delete</strong>
+                              </a>
+                            </div>
+                          </td>
+                    </tr>
+                 @endeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+@endyield   

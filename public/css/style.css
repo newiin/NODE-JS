@@ -1,0 +1,49 @@
+/* header */
+
+/* content */
+/* banner */
+
+#top-wrapper{
+    margin: 60px 0;
+}
+/*  */
+.table__wrapper{
+    margin: 20px 0;
+}
+tr .action{
+ 
+   width: 12%;
+}
+
+td .buttons .delete{
+    background-color: brown !important;
+   
+}
+/* footer */
+.footer{
+    height: 300px;
+}
+.form-edit{
+    margin-top: 150px;
+}
+
+.btnEdit{
+    margin-bottom: 200px;
+}
+.has-text-success{
+    
+}
+.level-item .is-success{
+    font-size: 24px;
+}
+.li-danger{
+    color: rgb(250, 52, 52)
+}
+.navbar-brand a{
+ color:  #00d1b2;
+ font-size: 36px;
+}
+.navbar-brand a:hover{
+    color:  #00d1b2;
+   
+   }

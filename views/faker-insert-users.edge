@@ -1,0 +1,20 @@
+@layout('layout/layout')
+
+@yield('content')
+       @set('title', 'insert users')
+       <div class="container">
+            <form action="/faker/users" method="post">
+                <div class="field is-grouped">
+                        <p class="control is-expanded">
+                          <input class="input" name="users" type="text" placeholder="Find a repository">
+                        </p>
+                        <div class="control">
+                          <button class="button is-link">Submit</button>
+                        </div>
+                </div>
+
+        
+            </form>
+       </div>
+     
+@endyield   

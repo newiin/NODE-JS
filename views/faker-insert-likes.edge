@@ -1,0 +1,22 @@
+@layout('layout/layout')
+
+@yield('content')
+       @set('title', 'insert users')
+       <div class="container">
+            <form action="/faker/likes" method="post">
+                <div class="field is-grouped">
+                        <p class="control is-expanded">
+                          <input class="input" name="likes" type="text" placeholder="likes">
+                        </p>
+                        <p class="control">
+                          <a class="button is-info">
+                            Send
+                          </a>
+                        </p>
+                </div>
+
+        
+            </form>
+       </div>
+     
+@endyield   
